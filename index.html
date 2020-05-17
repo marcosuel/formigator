@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Formigador</title>
+</head>
+
+<body class="pt-4 pl-4 pr-4">
+    <img src="img/logo.png" class="img-fluid" alt="Responsive image">
+    <div class="card  pt-2 pl-4 pr-4 pb-2">
+        <div class="card-body">
+            <div class="row">
+                <textarea name="translate" id="translate" class="form-control" rows="4" placeholder="Digite aqui..."></textarea>
+            </div>
+            <div class="row">
+                <textarea name="translated" id="translated" class="form-control mt-2" rows="4" placeholder="T R A D U Ç Ã O" readonly ></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-2" onclick="antTranslate()">T R A D U Z I R</button>
+    </div>
+
+
+<script>
+      
+    function antTranslate(){
+
+        let humanText = $('textarea[name="translate"]').val();
+        let aux = "";
+
+        var i;
+        for(i = 0; i < humanText.length; i++){
+            aux += humanText.substring(i, i+1) + " ";
+        }
+
+        aux = aux.toLocaleUpperCase()
+
+        $('textarea[name="translated"]').val(aux);
+
+    }
+</script>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</html>
+
